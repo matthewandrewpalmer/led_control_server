@@ -76,6 +76,7 @@
   padding: 10px;
 }
 
+/* Crirle design from https://anacidre.com/creating-circle-text-using-html-css/ */
 .circle-text {
   display: table-cell;
   height: 200px; /*change this and the width
