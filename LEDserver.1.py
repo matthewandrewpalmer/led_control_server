@@ -33,14 +33,14 @@ def setBlueLED(newBlue):
     blue = newBlue
 
 @app.route("/rednew")
-def setRed():
+def setRedNew():
     red = (255, 0, 0)
     setColor(red)
     return make_response(render_template("index.html", msg = 'LED set to Red'))
 
 
 @app.route("/greennew")
-def setGreen():
+def setGreenNew():
     setRedLED(0)
     setGreenLED(255)
     setBlueLED(0)
@@ -49,7 +49,7 @@ def setGreen():
     return resp
 
 @app.route("/bluenew")
-def setBlue():
+def setBlueNew():
     setRedLED(0)
     setGreenLED(0)
     setBlueLED(255)
