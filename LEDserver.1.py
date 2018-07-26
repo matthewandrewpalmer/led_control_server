@@ -120,6 +120,7 @@ def setOranage():
 def setWhite():
     rgbBlue = (255, 255, 255)
     setColors(rgbBlue)
+    setRGB(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to white'))
     return resp
 
