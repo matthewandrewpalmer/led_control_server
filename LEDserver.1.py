@@ -134,7 +134,6 @@ def setOranage():
 def setWhite():
     rgbBlue = (255, 255, 255)
     setColors(rgbBlue)
-    setRGB(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to white'))
     return resp
 
@@ -151,11 +150,11 @@ def setFadeOff():
     light = True
     while (light):
         if (getRed > 1):
-            setRed(getRed - 0.3)
+            setRed((getRed - 0.3)
         if (getGreen > 1):
-            setGreen(getGreen - 0.3)
+            setGreen((getGreen - 0.3))
         if (getBlue > 1):
-            setBlue(getBlue - 0.3)
+            setBlue((getBlue - 0.3))
         setGlobalColors()
         # if (red > 0 and blue > 0 and green > 0):
         if (getRed < 1 and getGreen < 1 and getBlue < 1):
