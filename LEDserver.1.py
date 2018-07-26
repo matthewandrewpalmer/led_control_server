@@ -64,7 +64,7 @@ def getHome():
 @app.route("/red")
 def setRed():
     rgbRed = (255, 0, 0)
-    setColors(rgbBlue)
+    setColors(rgbRed)
     return make_response(render_template(homepage, msg = 'LED set to Red'))
 
 
