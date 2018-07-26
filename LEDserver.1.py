@@ -39,15 +39,15 @@ def getBlue():
     global rgb
     return rgb[2]
 
-def setRed(newred):
+def setRedLED(newred):
     global rgb
     rgb[0] = newred
 
-def setGreen(newGreen):
+def setGreenLED(newGreen):
     global rgb
     rgb[1] = newGreen
 
-def setBlue(newBlue):
+def setBlueLED(newBlue):
     global rgb
     rgb[2] = newBlue
 
@@ -151,13 +151,13 @@ def setFadeOff():
     while (light):
         if (getRed() > 1):
             red = getRed() - 0.3
-            setRed(red)
+            setRedLED(red)
         if (getGreen() > 1):
             green = getGreen() - 0.3 
-            setGreen(green)
+            setGreenLED(green)
         if (getBlue() > 1):
             blue = getBlue() - 0.3
-            setBlue()
+            setBlueLED()
         setGlobalColors()
         # if (red > 0 and blue > 0 and green > 0):
         if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
