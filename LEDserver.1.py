@@ -17,7 +17,7 @@ global green
 global blue
 global rgb
 
-setRGB = ((255, 255, 255))
+setRGB = ((255.00, 255.00, 255.00))
 
 red = 0
 green = 0
