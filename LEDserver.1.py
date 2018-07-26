@@ -133,7 +133,8 @@ def setPink():
 
 @app.route("/fadeoff")
 def setFadeOff():
-    currentRgb = global rgb
+    global rgb
+    currentRgb = rgb
     light = True
     while (light):
         if (currentRgb[0] > 1):
