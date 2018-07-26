@@ -140,12 +140,15 @@ def setFadeOff():
     light = True
     while (light):
         if (currentRgb[0] > 1):
-            setRGB((currentRgb[0] - 0.3, currentRgb[1], currentRgb[2]))
+            red = currentRgb[0] - 0.3
+            setRGB((red, currentRgb[1], currentRgb[2]))
             setRedLED(red - 0.3)
         if (currentRgb[1] > 1):
-            setRGB((currentRgb[0], currentRgb[1] - 0.3, currentRgb[2]))
+            green = currentRgb[1] - 0.3
+            setRGB((currentRgb[0], green, currentRgb[2]))
         if (currentRgb[2] > 1):
-            setRGB((currentRgb[0], currentRgb[1], currentRgb[2] - 0.3))
+            blue = currentRgb[2] - 0.3
+            setRGB((currentRgb[0], currentRgb[1], blue))
         setColors(currentRgb)
         # if (red > 0 and blue > 0 and green > 0):
         if (red < 1 and blue < 1 and green < 1):
