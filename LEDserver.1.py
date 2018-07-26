@@ -139,6 +139,7 @@ def setFadeOff():
     currentRgb = rgb
     light = True
     while (light):
+        currentRgb = rgb
         if (currentRgb[0] > 1):
             red = currentRgb[0] - 0.3
             setRGB((red, currentRgb[1], currentRgb[2]))
