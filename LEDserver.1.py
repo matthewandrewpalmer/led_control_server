@@ -154,7 +154,7 @@ def setFadeOff():
             setRed(red)
         if (getGreen > 1):
             green = getGreen - 0.3 
-            setGreen(green
+            setGreen(green)
         if (getBlue > 1):
             blue = getBlue - 0.3
             setBlue()
