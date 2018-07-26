@@ -35,7 +35,7 @@ def setBlueLED(newBlue):
 @app.route("/rednew")
 def setRedNew():
     red = (255, 0, 0)
-    setColor22(red)
+    setColors(red)
     return make_response(render_template("index.html", msg = 'LED set to Red'))
 
 
@@ -63,83 +63,65 @@ def getHome():
 
 @app.route("/red")
 def setRed():
-    setRedLED(255)
-    setGreenLED(0) 
-    setBlueLED(0)
-    setColor()
+    rgbRed = (255, 0, 0)
+    setColors(rgbBlue)
     return make_response(render_template(homepage, msg = 'LED set to Red'))
 
 
 @app.route("/green")
 def setGreen():
-    setRedLED(0)
-    setGreenLED(255)
-    setBlueLED(0)
-    setColor()
+    rgbGreen = (0, 255, 0)
+    setColors(rgbGreen)
     resp = make_response(render_template(homepage, msg = 'LED set to Green'))
     return resp
 
 @app.route("/blue")
 def setBlue():
-    setRedLED(0)
-    setGreenLED(0)
-    setBlueLED(255)
-    setColor()
+    rgbBlue = (0, 0, 255)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to Blue'))
     return resp
 
 @app.route("/off")
 def setOff():
-    setRedLED(0)
-    setGreenLED(0)
-    setBlueLED(0)
-    setColor()
+    rgbBlue = (0, 0, 0)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED turned off'))
     return resp
 
 
 @app.route("/yellow")
 def setYellow():
-    setRedLED(255)
-    setGreenLED(128)
-    setBlueLED(0)
-    setColor()
+    rgbBlue = (255, 128, 0)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to yellow'))
     return resp
 
 @app.route("/purple")
 def setPurple():
-    setRedLED(154)
-    setGreenLED(19)
-    setBlueLED(212)
-    setColor()
+    rgbBlue = (154, 19, 212)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to purple'))
     return resp
 
 @app.route("/orange")
 def setOranage():
-    setRedLED(255)
-    setGreenLED(30)
-    setBlueLED(0)
-    setColor()
+    rgbBlue = (255, 30, 0)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to orange'))
     return resp
 
 @app.route("/white")
 def setWhite():
-    setRedLED(255)
-    setGreenLED(255)
-    setBlueLED(255)
-    setColor()
+    rgbBlue = (255, 255, 255)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to white'))
     return resp
 
 @app.route("/pink")
 def setPink():
-    setRedLED(254)
-    setGreenLED(62)
-    setBlueLED(253)
-    setColor()
+    rgbBlue = (254, 62, 253)
+    setColors(rgbBlue)
     resp = make_response(render_template(homepage, msg = 'LED set to pink'))
     return resp
 
@@ -164,11 +146,9 @@ def setFadeOff():
     return resp
 
 
-
-
 #pi.stop()
 
-def setColor22(rgb):
+def setColors(rgb):
     pi.set_PWM_dutycycle(17, rgb[0])
     pi.set_PWM_dutycycle(22, rgb[1])
     pi.set_PWM_dutycycle(24, rgb[2])
