@@ -156,8 +156,7 @@ def setFadeOff():
             setGreen(getGreen - 0.3)
         if (getBlue > 1):
             setBlue(getBlue - 0.3)
-        setColours(0)
-        setColors()
+        setGlobalColors()
         # if (red > 0 and blue > 0 and green > 0):
         if (getRed < 1 and getGreen < 1 and getBlue < 1):
             light = False
@@ -174,7 +173,7 @@ def setColors(rgb):
     pi.set_PWM_dutycycle(22, rgb[1])
     pi.set_PWM_dutycycle(24, rgb[2])
 
-def setColors():
+def setGlobalColors():
     global rgb
     pi.set_PWM_dutycycle(17, rgb[0])
     pi.set_PWM_dutycycle(22, rgb[1])
