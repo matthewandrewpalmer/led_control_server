@@ -23,21 +23,33 @@ red = 0
 green = 0
 blue = 0
 
-def setRGB(newRgb):
+def setRGB():
     global rgb
-    rgb = newRgb
+    rgb
 
-def setRedLED(newred):
-    global red
-    red = newred
+def getRed():
+    global rgb
+    return rgb[0]
 
-def setGreenLED(newGreen):
-    global green
-    green = newGreen
+def getGreen():
+    global rgb
+    return rgb[1]
 
-def setBlueLED(newBlue):
-    global blue
-    blue = newBlue
+def getBlue():
+    global rgb
+    return rgb[2]
+
+def setRed(newred):
+    global rgb
+    rgb[0] = newred
+
+def setGreen(newGreen):
+    global rgb
+    rgb[1] = newGreen
+
+def setBlue(newBlue):
+    global rgb
+    rgb[2] = newBlue
 
 @app.route("/rednew")
 def setRedNew():
@@ -138,19 +150,15 @@ def setFadeOff():
     global rgb
     light = True
     while (light):
-        if (rgb[0] > 1):
-            red = rgb[0] - 0.3
-            setRGB((red, rgb[1], rgb[2]))
-            setRedLED(red - 0.3)
-        if (rgb[1] > 1):
-            green = rgb[1] - 0.3
-            setRGB((rgb[0], green, rgb[2]))
-        if (rgb[2] > 1):
-            blue = rgb[2] - 0.3
-            setRGB((rgb[0], rgb[1], blue))
+        if (getRed > 1):
+            setRed(getRed - 0.3)
+        if (getGreen > 1):
+            setGreen(getGreen - 0.3)
+        if (getBlue > 1):
+            setBlue(getBlue - 0.3)
         setColors(rgb)
         # if (red > 0 and blue > 0 and green > 0):
-        if (rgb[0] < 1 and rgb[1] < 1 and rgb[2] < 1):
+        if (getRed < 1 and getGreen < 1 and getBlue < 1):
             light = False
             setRGB((0, 0, 0))
     resp = make_response(render_template(homepage, msg = 'LED turned off'))
