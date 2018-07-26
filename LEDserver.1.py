@@ -168,10 +168,10 @@ def setFadeOff():
 
 #pi.stop()
 
-def setColor22(red, green, blue):
-    pi.set_PWM_dutycycle(17, red)
-    pi.set_PWM_dutycycle(22, green)
-    pi.set_PWM_dutycycle(24, blue)
+def setColor22(rgb):
+    pi.set_PWM_dutycycle(17, rgb[0])
+    pi.set_PWM_dutycycle(22, rgb[1])
+    pi.set_PWM_dutycycle(24, rgb[2])
 
 def setColor():
     pi.set_PWM_dutycycle(17, red)
