@@ -149,18 +149,18 @@ def setFadeOff():
     global rgb
     light = True
     while (light):
-        if (getRed > 1):
+        if (getRed() > 1):
             red = getRed() - 0.3
             setRed(red)
-        if (getGreen > 1):
+        if (getGreen() > 1):
             green = getGreen() - 0.3 
             setGreen(green)
-        if (getBlue > 1):
+        if (getBlue() > 1):
             blue = getBlue() - 0.3
             setBlue()
         setGlobalColors()
         # if (red > 0 and blue > 0 and green > 0):
-        if (getRed < 1 and getGreen < 1 and getBlue < 1):
+        if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
             light = False
             setRGB((0, 0, 0))
     resp = make_response(render_template(homepage, msg = 'LED turned off'))
