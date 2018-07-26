@@ -136,21 +136,19 @@ def setPink():
 @app.route("/fadeoff")
 def setFadeOff():
     global rgb
-    currentRgb = rgb
     light = True
     while (light):
-        currentRgb = rgb
-        if (currentRgb[0] > 1):
-            red = currentRgb[0] - 0.3
-            setRGB((red, currentRgb[1], currentRgb[2]))
+        if (rgb[0] > 1):
+            red = rgb[0] - 0.3
+            setRGB((red, rgb[1], rgb[2]))
             setRedLED(red - 0.3)
-        if (currentRgb[1] > 1):
-            green = currentRgb[1] - 0.3
-            setRGB((currentRgb[0], green, currentRgb[2]))
-        if (currentRgb[2] > 1):
-            blue = currentRgb[2] - 0.3
-            setRGB((currentRgb[0], currentRgb[1], blue))
-        setColors(currentRgb)
+        if (rgb[1] > 1):
+            green = rgb[1] - 0.3
+            setRGB((rgb[0], green, rgb[2]))
+        if (rgb[2] > 1):
+            blue = rgb[2] - 0.3
+            setRGB((rgb[0], rgb[1], blue))
+        setColors(rgb)
         # if (red > 0 and blue > 0 and green > 0):
         if (red < 1 and blue < 1 and green < 1):
             light = False
