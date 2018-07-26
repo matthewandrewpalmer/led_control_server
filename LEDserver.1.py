@@ -150,7 +150,7 @@ def setFadeOff():
             setRGB((rgb[0], rgb[1], blue))
         setColors(rgb)
         # if (red > 0 and blue > 0 and green > 0):
-        if (red < 1 and blue < 1 and green < 1):
+        if (rgb[0] < 1 and rgb[1] < 1 and rgb[2] < 1):
             light = False
             setRGB((0, 0, 0))
     resp = make_response(render_template(homepage, msg = 'LED turned off'))
