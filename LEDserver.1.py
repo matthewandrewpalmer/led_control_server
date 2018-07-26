@@ -140,7 +140,7 @@ def setFadeOff():
     light = True
     while (light):
         if (currentRgb[0] > 1):
-            setRGB((currentRgb[0] - 0.3,currentRgb[1], currentRgb[2]))
+            setRGB((currentRgb[0] - 0.3, currentRgb[1], currentRgb[2]))
             setRedLED(red - 0.3)
         if (currentRgb[1] > 1):
             setRGB((currentRgb[0], currentRgb[1] - 0.3, currentRgb[2]))
@@ -158,6 +158,7 @@ def setFadeOff():
 #pi.stop()
 
 def setColors(rgb):
+    setRGB(rgb)
     pi.set_PWM_dutycycle(17, rgb[0])
     pi.set_PWM_dutycycle(22, rgb[1])
     pi.set_PWM_dutycycle(24, rgb[2])
