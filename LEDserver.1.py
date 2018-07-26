@@ -23,9 +23,9 @@ red = 0
 green = 0
 blue = 0
 
-def setRGB():
+def setRGB(newRGB):
     global rgb
-    rgb
+    rgb = newRGB
 
 def getRed():
     global rgb
