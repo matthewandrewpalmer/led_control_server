@@ -15,10 +15,15 @@ homepage = "home.html"
 global red 
 global green 
 global blue
+global rgb
 
 red = 0
 green = 0
 blue = 0
+
+def setRGB(newRgb):
+    global rgb
+    rgb = newRgb
 
 def setRedLED(newred):
     global red
@@ -127,21 +132,21 @@ def setPink():
 
 @app.route("/fadeoff")
 def setFadeOff():
+    currentRgb = global rgb
     light = True
     while (light):
-        if (red > 1):
+        if (currentRgb[0] > 1):
+            setRGB((currentRgb[0] - 0.3,currentRgb[1], currentRgb[2]))
              setRedLED(red - 0.3)
-        if (green > 1):
-            setGreenLED(green - 0.3)
-        if (blue > 1):
-            setBlueLED(blue - 0.3)
-        setColor()
+        if (currentRgb[1] > 1):
+            setRGB((currentRgb[0], currentRgb[1] - 0.3, currentRgb[2]))
+        if (currentRgb[2] > 1):
+            setRGB((currentRgb[0], currentRgb[1], currentRgb[2] - 0.3))
+        setColors(currentRgb)
         # if (red > 0 and blue > 0 and green > 0):
         if (red < 1 and blue < 1 and green < 1):
             light = False
-            setRedLED(0)
-            setGreenLED(0)
-            setBlueLED(0)
+            setRGB((0, 0, 0))
     resp = make_response(render_template(homepage, msg = 'LED turned off'))
     return resp
 
