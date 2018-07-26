@@ -15,7 +15,7 @@ homepage = "home.html"
 global red 
 global green 
 global blue
-global 
+global rgb
 
 setRGB = ((255, 255, 255))
 
