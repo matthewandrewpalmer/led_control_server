@@ -150,7 +150,7 @@ def setFadeOff():
     light = True
     while (light):
         if (getRed > 1):
-            setRed((getRed - 0.3)
+            setRed((getRed - 0.3))
         if (getGreen > 1):
             setGreen((getGreen - 0.3))
         if (getBlue > 1):
