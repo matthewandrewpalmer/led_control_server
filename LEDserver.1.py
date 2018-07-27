@@ -139,7 +139,7 @@ def setFadeOffNew():
         if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
             light = False
             setRGB((0, 0, 0))
-    resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
+    resp = make_response(render_template("index.html", msg = 'LED turned off', pagecolor = 'off'))
     return resp
 
 @app.route("/fadeoff")
