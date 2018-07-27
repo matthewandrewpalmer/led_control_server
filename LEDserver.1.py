@@ -63,44 +63,37 @@ def setGreenNew():
 @app.route("/blue")
 def setBlueNew():
     setColors((0, 0, 255))
-    resp = make_response(render_template(homepage, msg = 'LED set to Blue', pagecolor = 'blue'))
-    return resp
+    return make_response(render_template(homepage, msg = 'LED set to Blue', pagecolor = 'blue'))
 
 @app.route("/off")
 def setOff():
     setColors((0, 0, 0))
-    resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
-    return resp
+    return make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
 
 @app.route("/yellow")
 def setYellow():
     setColors((255, 128, 0))
-    resp = make_response(render_template(homepage, msg = 'LED set to yellow', pagecolor = 'amber'))
-    return resp
+    return make_response(render_template(homepage, msg = 'LED set to yellow', pagecolor = 'amber'))
 
 @app.route("/purple")
 def setPurple():
     setColors((154, 19, 212))
-    resp = make_response(render_template(homepage, msg = 'LED set to purple'))
-    return resp
+    return make_response(render_template(homepage, msg = 'LED set to purple'))
 
 @app.route("/orange")
 def setOranage():
     setColors((255, 30, 0))
-    resp = make_response(render_template(homepage, msg = 'LED set to orange', pagecolor = 'orange'))
-    return resp
+    return make_response(render_template(homepage, msg = 'LED set to orange', pagecolor = 'orange'))
 
 @app.route("/white")
 def setWhite():
     setColors((255, 255, 255))
-    resp = make_response(render_template(homepage, msg = 'LED set to white'))
-    return resp
+    return  make_response(render_template(homepage, msg = 'LED set to white'))
 
 @app.route("/pink")
 def setPink():
     setColors((254, 62, 253))
-    resp = make_response(render_template(homepage, msg = 'LED set to pink', pagecolor = 'pink'))
-    return resp
+    return  make_response(render_template(homepage, msg = 'LED set to pink', pagecolor = 'pink'))
 
 @app.route("/fadeoff")
 def setFadeOff():
@@ -120,8 +113,7 @@ def setFadeOff():
         if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
             light = False
             setRGB((0, 0, 0))
-    resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
-    return resp
+    return make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
 
 #pi.stop()
 
