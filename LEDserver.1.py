@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # =================== Led Control ============== 
 
-homepage = "home.html"
+homepage = "index.html"
 global rgb
 
 rgb = [255, 255, 255]
