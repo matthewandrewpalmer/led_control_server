@@ -69,14 +69,14 @@ def setBlueNew():
 @app.route("/off")
 def setOff():
     setColors((0, 0, 0))
-    resp = make_response(render_template(homepage, msg = 'LED turned off'))
+    resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
     return resp
 
 
 @app.route("/yellow")
 def setYellow():
     setColors((255, 128, 0))
-    resp = make_response(render_template(homepage, msg = 'LED set to yellow'))
+    resp = make_response(render_template(homepage, msg = 'LED set to yellow', pagecolor = 'amber'))
     return resp
 
 @app.route("/purple")
@@ -100,7 +100,7 @@ def setWhite():
 @app.route("/pink")
 def setPink():
     setColors((254, 62, 253))
-    resp = make_response(render_template(homepage, msg = 'LED set to pink'))
+    resp = make_response(render_template(homepage, msg = 'LED set to pink', pagecolor = 'pink'))
     return resp
 
 @app.route("/fadeoff")
