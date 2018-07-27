@@ -44,44 +44,26 @@ def setBlueLED(newBlue):
     global rgb
     rgb[2] = newBlue
 
-@app.route("/rednew")
-def setRedNew():
-    setColors((255, 0, 0))
-    return make_response(render_template("index.html", msg = 'LED set to Red', pagecolor = 'red'))
-
-
-@app.route("/greennew")
-def setGreenNew():
-    setColors((0, 255, 0))
-    resp = make_response(render_template("index.html", msg = 'LED set to Green', pagecolor = 'green'))
-    return resp
-
-@app.route("/bluenew")
-def setBlueNew():
-    setColors((0, 0, 255))
-    resp = make_response(render_template("index.html", msg = 'LED set to Blue', pagecolor = 'blue'))
-    return resp
-
 @app.route("/")
 def getHome():
     return render_template(homepage, msg = '')
 
 @app.route("/red")
-def setRed():
+def setRedNew():
     setColors((255, 0, 0))
-    return make_response(render_template(homepage, msg = 'LED set to Red'))
+    return make_response(render_template("index.html", msg = 'LED set to Red', pagecolor = 'red'))
 
 
 @app.route("/green")
-def setGreen():
+def setGreenNew():
     setColors((0, 255, 0))
-    resp = make_response(render_template(homepage, msg = 'LED set to Green'))
+    resp = make_response(render_template("index.html", msg = 'LED set to Green', pagecolor = 'green'))
     return resp
 
 @app.route("/blue")
-def setBlue():
+def setBlueNew():
     setColors((0, 0, 255))
-    resp = make_response(render_template(homepage, msg = 'LED set to Blue'))
+    resp = make_response(render_template("index.html", msg = 'LED set to Blue', pagecolor = 'blue'))
     return resp
 
 @app.route("/off")
