@@ -25,7 +25,7 @@ blue = 0
 
 def setRGB(newRGB):
     global rgb
-    rgb = newRGB
+    rgb = [newRGB[0], newRGB[1], newRGB[2])
 
 def getRed():
     global rgb
