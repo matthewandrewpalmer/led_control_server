@@ -122,7 +122,7 @@ def setPink():
     return resp
 
 @app.route("/fadeoffnew")
-def setFadeOff():
+def setFadeOffNew():
     global rgb
     light = True
     while (light):
