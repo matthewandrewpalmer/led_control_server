@@ -104,8 +104,6 @@ def setPurple():
     return resp
 
 @app.route("/orange")
-setOranage()
-
 def setOranage():
     setColors((255, 30, 0))
     resp = make_response(render_template(homepage, msg = 'LED set to orange'))
