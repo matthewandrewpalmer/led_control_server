@@ -82,7 +82,6 @@ def setRed():
 
 @app.route("/green")
 def setGreen():
-    rgbGreen = 
     setColors((0, 255, 0))
     resp = make_response(render_template(homepage, msg = 'LED set to Green'))
     return resp
