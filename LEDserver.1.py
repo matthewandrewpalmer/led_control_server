@@ -12,16 +12,9 @@ app = Flask(__name__)
 # =================== Led Control ============== 
 
 homepage = "home.html"
-global red 
-global green 
-global blue
 global rgb
 
-setRGB = [255, 255, 255]
-
-red = 0
-green = 0
-blue = 0
+rgb = [255, 255, 255]
 
 def setRGB(newRGB):
     global rgb
@@ -89,8 +82,8 @@ def setRed():
 
 @app.route("/green")
 def setGreen():
-    rgbGreen = (0, 255, 0)
-    setColors(rgbGreen)
+    rgbGreen = 
+    setColors((0, 255, 0))
     resp = make_response(render_template(homepage, msg = 'LED set to Green'))
     return resp
 
