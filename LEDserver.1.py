@@ -103,27 +103,6 @@ def setPink():
     resp = make_response(render_template(homepage, msg = 'LED set to pink'))
     return resp
 
-@app.route("/fadeoffnew")
-def setFadeOffNew():
-    global rgb
-    light = True
-    while (light):
-        if (getRed() > 1):
-            red = getRed() - 0.3
-            setRedLED(red)
-        if (getGreen() > 1):
-            green = getGreen() - 0.3 
-            setGreenLED(green)
-        if (getBlue() > 1):
-            setBlueLED(getBlue() - 0.3)
-        setGlobalColors()
-        # if (red > 0 and blue > 0 and green > 0):
-        if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
-            light = False
-            setRGB((0, 0, 0))
-    resp = make_response(render_template("index.html", msg = 'LED turned off', pagecolor = 'off'))
-    return resp
-
 @app.route("/fadeoff")
 def setFadeOff():
     global rgb
@@ -142,7 +121,7 @@ def setFadeOff():
         if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
             light = False
             setRGB((0, 0, 0))
-    resp = make_response(render_template(homepage, msg = 'LED turned off'))
+    resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
     return resp
 
 
