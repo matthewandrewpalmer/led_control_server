@@ -88,12 +88,12 @@ def setOranage():
 @app.route("/white")
 def setWhite():
     setColors((255, 255, 255))
-    return  make_response(render_template(homepage, msg = 'LED set to white'))
+    return make_response(render_template(homepage, msg = 'LED set to white'))
 
 @app.route("/pink")
 def setPink():
     setColors((254, 62, 253))
-    return  make_response(render_template(homepage, msg = 'LED set to pink', pagecolor = 'pink'))
+    return make_response(render_template(homepage, msg = 'LED set to pink', pagecolor = 'pink'))
 
 @app.route("/fadeoff")
 def setFadeOff():
