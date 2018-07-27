@@ -51,19 +51,19 @@ def getHome():
 @app.route("/red")
 def setRedNew():
     setColors((255, 0, 0))
-    return make_response(render_template("index.html", msg = 'LED set to Red', pagecolor = 'red'))
+    return make_response(render_template(homepage, msg = 'LED set to Red', pagecolor = 'red'))
 
 
 @app.route("/green")
 def setGreenNew():
     setColors((0, 255, 0))
-    resp = make_response(render_template("index.html", msg = 'LED set to Green', pagecolor = 'green'))
+    resp = make_response(render_template(homepage, msg = 'LED set to Green', pagecolor = 'green'))
     return resp
 
 @app.route("/blue")
 def setBlueNew():
     setColors((0, 0, 255))
-    resp = make_response(render_template("index.html", msg = 'LED set to Blue', pagecolor = 'blue'))
+    resp = make_response(render_template(homepage, msg = 'LED set to Blue', pagecolor = 'blue'))
     return resp
 
 @app.route("/off")
@@ -123,7 +123,6 @@ def setFadeOff():
             setRGB((0, 0, 0))
     resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
     return resp
-
 
 #pi.stop()
 
