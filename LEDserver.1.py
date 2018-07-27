@@ -46,7 +46,7 @@ def setBlueLED(newBlue):
 
 @app.route("/")
 def getHome():
-    return render_template(homepage, msg = '')
+    return render_template(homepage, msg = '', pagecolor = 'off')
 
 @app.route("/red")
 def setRedNew():
