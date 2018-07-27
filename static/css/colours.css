@@ -1,4 +1,4 @@
 .red {
-    background-color: red;
-    color: blue;
+    color: rgb(226, 30, 30) !important;
+    background-color: #a33408 !important
 }
