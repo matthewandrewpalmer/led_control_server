@@ -47,13 +47,13 @@ def setBlueLED(newBlue):
 @app.route("/rednew")
 def setRedNew():
     setColors((255, 0, 0))
-    return make_response(render_template("index.html", msg = 'LED set to Red'))
+    return make_response(render_template("index.html", msg = 'LED set to Red', pagecolor = 'amber'))
 
 
 @app.route("/greennew")
 def setGreenNew():
     setColors((0, 255, 0))
-    resp = make_response(render_template("index.html", msg = 'LED set to Green'))
+    resp = make_response(render_template("index.html", msg = 'LED set to Green', pagecolor = 'green'))
     return resp
 
 @app.route("/bluenew")
