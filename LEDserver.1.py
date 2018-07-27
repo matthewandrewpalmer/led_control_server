@@ -2,18 +2,17 @@ import os
 from flask import Flask, redirect, request, render_template, make_response, escape, session
 import pigpio
 
-
 pi = pigpio.pi()
 
 # ==============================================
 
 app = Flask(__name__)
 
-# =================== Led Control ============== 
+# =================== Global Variables - Getter and Setters =================== 
 
 homepage = "index.html"
-global rgb
 
+global rgb
 rgb = [255, 255, 255]
 
 def setRGB(newRGB):
@@ -44,6 +43,8 @@ def setBlueLED(newBlue):
     global rgb
     rgb[2] = newBlue
 
+# =================== Control Page Rendering =================== 
+
 @app.route("/")
 def getHome():
     return render_template(homepage, msg = '', pagecolor = 'off')
@@ -52,7 +53,6 @@ def getHome():
 def setRedNew():
     setColors((255, 0, 0))
     return make_response(render_template(homepage, msg = 'LED set to Red', pagecolor = 'red'))
-
 
 @app.route("/green")
 def setGreenNew():
@@ -71,7 +71,6 @@ def setOff():
     setColors((0, 0, 0))
     resp = make_response(render_template(homepage, msg = 'LED turned off', pagecolor = 'off'))
     return resp
-
 
 @app.route("/yellow")
 def setYellow():
@@ -126,6 +125,8 @@ def setFadeOff():
 
 #pi.stop()
 
+# =================== LED Control =================== 
+
 def setColors(rgb):
     setRGB(rgb)
     pi.set_PWM_dutycycle(17, rgb[0])
@@ -138,7 +139,7 @@ def setGlobalColors():
     pi.set_PWM_dutycycle(22, rgb[1])
     pi.set_PWM_dutycycle(24, rgb[2])
 
-# ================== Server startup ===================
+# =================== Server startup ===================
 
 if __name__ == "__main__":
     app.debug = True
