@@ -156,8 +156,7 @@ def setFadeOff():
             green = getGreen() - 0.3 
             setGreenLED(green)
         if (getBlue() > 1):
-            blue = getBlue() - 0.3
-            setBlueLED()
+            setBlueLED(getBlue() - 0.3)
         setGlobalColors()
         # if (red > 0 and blue > 0 and green > 0):
         if (getRed() < 1 and getGreen() < 1 and getBlue() < 1):
